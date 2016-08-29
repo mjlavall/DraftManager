@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace DraftManager
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,7 +16,7 @@ namespace DraftManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Forms.Menu());
         }
     }
 }
