@@ -32,8 +32,10 @@ namespace DraftManager.Forms
             var roster = new Roster(_league.Id)
             {
                 Name = teamName,
-                DraftOrder = (_league.Rosters?.Count ?? 0) + 1
+                DraftOrder = (_league.Rosters?.Count ?? 0) + 1,
+                LeagueId = _league.Id
             };
+            _league.Rosters.Add(roster);
             context.Rosters.Add(roster);
             context.SaveChanges();
             UpdateListBox();
@@ -80,12 +82,29 @@ namespace DraftManager.Forms
         private void UpdateListBox()
         {
             listBoxTeams.DataSource = _league.Rosters?.OrderBy(r => r.DraftOrder).ToList() ?? new List<Roster>();
-            listBoxTeams.DisplayMember = "Name";
         }
 
         private void comboBoxLeague_SelectedIndexChanged(object sender, EventArgs e)
         {
             _league = (League)comboBoxLeague.SelectedItem;
+            UpdateListBox();
+        }
+
+        private void buttonClearRosters_Click(object sender, EventArgs e)
+        {
+            foreach (var roster in _league.Rosters)
+            {
+                roster.Players.Clear();
+            }
+            context.SaveChanges();
+        }
+
+        private void listBoxTeams_DoubleClick(object sender, EventArgs e)
+        {
+            var roster = (Roster)listBoxTeams.SelectedItem;
+            _league.Rosters.ToList().ForEach(r => r.IsMe = false);
+            roster.IsMe = true;
+            context.SaveChanges();
             UpdateListBox();
         }
     }

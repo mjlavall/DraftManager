@@ -35,13 +35,14 @@
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
+            this.buttonClearRosters = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxLeague
             // 
             this.comboBoxLeague.Location = new System.Drawing.Point(12, 12);
-            this.comboBoxLeague.Name = "textBoxTeam";
-            this.comboBoxLeague.Size = new System.Drawing.Size(192, 20);
+            this.comboBoxLeague.Name = "comboBoxLeague";
+            this.comboBoxLeague.Size = new System.Drawing.Size(192, 21);
             this.comboBoxLeague.TabIndex = 0;
             this.comboBoxLeague.SelectedIndexChanged += new System.EventHandler(this.comboBoxLeague_SelectedIndexChanged);
             // 
@@ -57,8 +58,9 @@
             this.listBoxTeams.FormattingEnabled = true;
             this.listBoxTeams.Location = new System.Drawing.Point(12, 94);
             this.listBoxTeams.Name = "listBoxTeams";
-            this.listBoxTeams.Size = new System.Drawing.Size(192, 224);
+            this.listBoxTeams.Size = new System.Drawing.Size(192, 212);
             this.listBoxTeams.TabIndex = 3;
+            this.listBoxTeams.DoubleClick += new System.EventHandler(this.listBoxTeams_DoubleClick);
             // 
             // buttonAddTeam
             // 
@@ -68,7 +70,7 @@
             this.buttonAddTeam.TabIndex = 2;
             this.buttonAddTeam.Text = "Add Team";
             this.buttonAddTeam.UseVisualStyleBackColor = true;
-            this.buttonAddTeam.Click += new System.EventHandler(this.buttonAddTeam_Click);           
+            this.buttonAddTeam.Click += new System.EventHandler(this.buttonAddTeam_Click);
             // 
             // buttonUp
             // 
@@ -100,11 +102,22 @@
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
             // 
+            // buttonClearRosters
+            // 
+            this.buttonClearRosters.Location = new System.Drawing.Point(12, 312);
+            this.buttonClearRosters.Name = "buttonClearRosters";
+            this.buttonClearRosters.Size = new System.Drawing.Size(92, 23);
+            this.buttonClearRosters.TabIndex = 7;
+            this.buttonClearRosters.Text = "Clear Rosters";
+            this.buttonClearRosters.UseVisualStyleBackColor = true;
+            this.buttonClearRosters.Click += new System.EventHandler(this.buttonClearRosters_Click);
+            // 
             // EditLeague
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 404);
+            this.ClientSize = new System.Drawing.Size(275, 342);
+            this.Controls.Add(this.buttonClearRosters);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonUp);
@@ -112,7 +125,7 @@
             this.Controls.Add(this.listBoxTeams);
             this.Controls.Add(this.textBoxTeam);
             this.Controls.Add(this.comboBoxLeague);
-            this.Name = "DraftSetup";
+            this.Name = "EditLeague";
             this.Text = "DraftSetup";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonDown;
+        private System.Windows.Forms.Button buttonClearRosters;
     }
 }

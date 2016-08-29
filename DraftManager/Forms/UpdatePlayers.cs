@@ -19,12 +19,14 @@ namespace DraftManager.Forms
             numericUpDownRank.Minimum = 0;
             numericUpDownRank.Maximum = context.Players.Count();
             BindPlayers();
+            Loaded = false;
             comboBoxPosition.DataSource = new List<string>
             {
                 "RB", "WR", "TE", "QB", "K", "D/ST"
             };
             comboBoxTeam.DataSource = context.Teams.OrderBy(t => t.Abbreviation).ToList();
             comboBoxTeam.DisplayMember = "Abbreviation";
+            Loaded = true;
         }
 
         private void BindPlayers()

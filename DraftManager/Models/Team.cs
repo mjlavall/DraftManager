@@ -12,8 +12,7 @@ namespace DraftManager.Models
         public string Name { get; set; }
         public string Location { get; set; }
         public string Abbreviation { get; set; }
-        public int Bye1 { get; set; }
-        public int Bye2 { get; set; }
+        public int Bye { get; set; }
         public int Wins { get; set; }
         public int Losses { get; set; }
         public int Ties { get; set; }

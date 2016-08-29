@@ -10,6 +10,6 @@ namespace DraftManager.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Roster> Rosters { get; set; }
+        public virtual ICollection<Roster> Rosters { get; set; }
     }
 }

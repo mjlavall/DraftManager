@@ -67,6 +67,12 @@
     <Compile Include="Forms\DraftDay.Designer.cs">
       <DependentUpon>DraftDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DraftDayLeagueSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DraftDayLeagueSelect.Designer.cs">
+      <DependentUpon>DraftDayLeagueSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditLeague.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\DraftDay.resx">
       <DependentUpon>DraftDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DraftDayLeagueSelect.resx">
+      <DependentUpon>DraftDayLeagueSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditLeague.resx">
+      <DependentUpon>EditLeague.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarkInjuries.resx">
       <DependentUpon>MarkInjuries.cs</DependentUpon>

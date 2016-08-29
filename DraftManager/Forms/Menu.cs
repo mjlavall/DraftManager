@@ -105,5 +105,10 @@ namespace DraftManager.Forms
                 MessageBox.Show("No leagues are configured.");
             }
         }
+
+        private void buttonDraftDay_Click(object sender, EventArgs e)
+        {
+            new DraftDayLeagueSelect().Show();
+        }
     }
 }

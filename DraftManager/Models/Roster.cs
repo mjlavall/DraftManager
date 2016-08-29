@@ -11,6 +11,7 @@ namespace DraftManager.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int DraftOrder { get; set; }
+        public bool IsMe { get; set; }
         public int LeagueId { get; set; }
         public virtual League League { get; set; }
         public virtual ICollection<Player> Players { get; set; }
@@ -25,20 +26,9 @@ namespace DraftManager.Models
             LeagueId = league;
         }
 
-        public Roster(int league, string name) : this(league)
+        public override string ToString()
         {
-            Name = name;
-        }
-
-        public Roster(string name) : this()
-        {
-            Name = name;
-        }
-
-
-        public void AddPlayer(Player p)
-        {
-            Players.Add(p);
+            return $"{(IsMe ? "*" : " ")} {Name} ";
         }
     }
 }

@@ -34,6 +34,7 @@
             this.buttonInjuries = new System.Windows.Forms.Button();
             this.buttonNewLeague = new System.Windows.Forms.Button();
             this.buttonEditLeague = new System.Windows.Forms.Button();
+            this.buttonDraftDay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonLoadPlayers
@@ -95,11 +96,22 @@
             this.buttonEditLeague.UseVisualStyleBackColor = true;
             this.buttonEditLeague.Click += new System.EventHandler(this.buttonEditLeague_Click);
             // 
+            // buttonDraftDay
+            // 
+            this.buttonDraftDay.Location = new System.Drawing.Point(65, 100);
+            this.buttonDraftDay.Name = "buttonDraftDay";
+            this.buttonDraftDay.Size = new System.Drawing.Size(100, 23);
+            this.buttonDraftDay.TabIndex = 5;
+            this.buttonDraftDay.Text = "Draft Day";
+            this.buttonDraftDay.UseVisualStyleBackColor = true;
+            this.buttonDraftDay.Click += new System.EventHandler(this.buttonDraftDay_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(233, 130);
+            this.Controls.Add(this.buttonDraftDay);
             this.Controls.Add(this.buttonEditLeague);
             this.Controls.Add(this.buttonNewLeague);
             this.Controls.Add(this.buttonInjuries);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Button buttonInjuries;
         private System.Windows.Forms.Button buttonNewLeague;
         private System.Windows.Forms.Button buttonEditLeague;
+        private System.Windows.Forms.Button buttonDraftDay;
     }
 }
 
