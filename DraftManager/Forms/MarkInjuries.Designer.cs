@@ -38,24 +38,33 @@
             // 
             // listBoxHealthy
             // 
+            this.listBoxHealthy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.listBoxHealthy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxHealthy.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.listBoxHealthy.FormattingEnabled = true;
             this.listBoxHealthy.Location = new System.Drawing.Point(13, 51);
             this.listBoxHealthy.Name = "listBoxHealthy";
-            this.listBoxHealthy.Size = new System.Drawing.Size(155, 368);
+            this.listBoxHealthy.Size = new System.Drawing.Size(155, 364);
             this.listBoxHealthy.TabIndex = 4;
             this.listBoxHealthy.DoubleClick += new System.EventHandler(this.listBoxHealthy_DoubleClick);
             // 
             // listBoxInjured
             // 
+            this.listBoxInjured.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.listBoxInjured.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxInjured.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.listBoxInjured.FormattingEnabled = true;
             this.listBoxInjured.Location = new System.Drawing.Point(174, 51);
             this.listBoxInjured.Name = "listBoxInjured";
-            this.listBoxInjured.Size = new System.Drawing.Size(155, 368);
+            this.listBoxInjured.Size = new System.Drawing.Size(155, 364);
             this.listBoxInjured.TabIndex = 5;
             this.listBoxInjured.DoubleClick += new System.EventHandler(this.listBoxInjured_DoubleClick);
             // 
             // textBoxHealthy
             // 
+            this.textBoxHealthy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.textBoxHealthy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxHealthy.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.textBoxHealthy.Location = new System.Drawing.Point(13, 25);
             this.textBoxHealthy.Name = "textBoxHealthy";
             this.textBoxHealthy.Size = new System.Drawing.Size(155, 20);
@@ -64,6 +73,9 @@
             // 
             // textBoxInjured
             // 
+            this.textBoxInjured.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.textBoxInjured.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxInjured.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.textBoxInjured.Location = new System.Drawing.Point(174, 25);
             this.textBoxInjured.Name = "textBoxInjured";
             this.textBoxInjured.Size = new System.Drawing.Size(155, 20);
@@ -92,6 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(341, 431);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -99,6 +112,8 @@
             this.Controls.Add(this.textBoxHealthy);
             this.Controls.Add(this.listBoxInjured);
             this.Controls.Add(this.listBoxHealthy);
+            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MarkInjuries";
             this.Text = "Mark Injuries";
             this.ResumeLayout(false);

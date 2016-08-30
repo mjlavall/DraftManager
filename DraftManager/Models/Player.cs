@@ -22,6 +22,6 @@ namespace DraftManager.Models
         public string Name => $"{FirstName} {LastName}";
         public void RaiseRank() => Rank++;
         public void LowerRank() => Rank--;
-        public override string ToString() => $"[{Rank}]{(Rank < 100 ? (Rank < 10 ? "  " : " ") : "")} {Position}{(Position.Length < 4 ? (Position.Length < 2 ? "   " : "  ") : "")} {FirstName} {LastName} ({Team.Abbreviation} {Team.Bye})";
+        public override string ToString() => $"[{Rank}]{(Rank < 100 ? (Rank < 10 ? "  " : " ") : "")} {Position}{(Position.Length < 4 ? (Position.Length < 2 ? "   " : "  ") : "")}{(Out ? " OUT" : "")}{(Injured ? " INJURED" : "")} {FirstName} {LastName} ({Team.Abbreviation} {Team.Bye})";
     }
 }

@@ -40,11 +40,14 @@
             // 
             // listBoxAvailablePlayers
             // 
+            this.listBoxAvailablePlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.listBoxAvailablePlayers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxAvailablePlayers.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxAvailablePlayers.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.listBoxAvailablePlayers.FormattingEnabled = true;
             this.listBoxAvailablePlayers.Location = new System.Drawing.Point(17, 99);
             this.listBoxAvailablePlayers.Name = "listBoxAvailablePlayers";
-            this.listBoxAvailablePlayers.Size = new System.Drawing.Size(315, 420);
+            this.listBoxAvailablePlayers.Size = new System.Drawing.Size(315, 416);
             this.listBoxAvailablePlayers.TabIndex = 0;
             this.listBoxAvailablePlayers.DoubleClick += new System.EventHandler(this.listBoxAvailablePlayers_DoubleClick);
             // 
@@ -60,15 +63,21 @@
             // 
             // listBoxRoster
             // 
+            this.listBoxRoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.listBoxRoster.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxRoster.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxRoster.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.listBoxRoster.FormattingEnabled = true;
             this.listBoxRoster.Location = new System.Drawing.Point(338, 99);
             this.listBoxRoster.Name = "listBoxRoster";
-            this.listBoxRoster.Size = new System.Drawing.Size(365, 420);
+            this.listBoxRoster.Size = new System.Drawing.Size(365, 416);
             this.listBoxRoster.TabIndex = 2;
             // 
             // textBoxFilter
             // 
+            this.textBoxFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.textBoxFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFilter.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.textBoxFilter.Location = new System.Drawing.Point(17, 75);
             this.textBoxFilter.Name = "textBoxFilter";
             this.textBoxFilter.Size = new System.Drawing.Size(243, 20);
@@ -77,6 +86,9 @@
             // 
             // comboBoxFilter
             // 
+            this.comboBoxFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.comboBoxFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFilter.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBoxFilter.FormattingEnabled = true;
             this.comboBoxFilter.Location = new System.Drawing.Point(266, 75);
             this.comboBoxFilter.Name = "comboBoxFilter";
@@ -86,11 +98,14 @@
             // 
             // listBoxMyTeam
             // 
+            this.listBoxMyTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.listBoxMyTeam.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxMyTeam.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxMyTeam.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.listBoxMyTeam.FormattingEnabled = true;
             this.listBoxMyTeam.Location = new System.Drawing.Point(709, 99);
             this.listBoxMyTeam.Name = "listBoxMyTeam";
-            this.listBoxMyTeam.Size = new System.Drawing.Size(351, 420);
+            this.listBoxMyTeam.Size = new System.Drawing.Size(351, 416);
             this.listBoxMyTeam.TabIndex = 7;
             // 
             // labelCurrentTeam
@@ -117,6 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1072, 534);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelCurrentTeam);
@@ -126,6 +142,8 @@
             this.Controls.Add(this.listBoxRoster);
             this.Controls.Add(this.labelRoundInfo);
             this.Controls.Add(this.listBoxAvailablePlayers);
+            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DraftDay";
             this.Text = "Draft Day";
             this.ResumeLayout(false);

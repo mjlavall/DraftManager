@@ -29,6 +29,7 @@ namespace DraftManager.Forms
         private void buttonAddTeam_Click(object sender, EventArgs e)
         {
             var teamName = string.IsNullOrEmpty(textBoxTeam.Text) ? $"Team {(_league.Rosters?.Count ?? 0) + 1}" : textBoxTeam.Text;
+            textBoxTeam.Text = "";
             var roster = new Roster(_league.Id)
             {
                 Name = teamName,
@@ -106,6 +107,11 @@ namespace DraftManager.Forms
             roster.IsMe = true;
             context.SaveChanges();
             UpdateListBox();
+        }
+
+        private void textBoxTeam_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

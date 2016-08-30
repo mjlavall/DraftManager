@@ -34,6 +34,9 @@
             // 
             // comboBoxLeagues
             // 
+            this.comboBoxLeagues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.comboBoxLeagues.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxLeagues.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBoxLeagues.FormattingEnabled = true;
             this.comboBoxLeagues.Location = new System.Drawing.Point(12, 12);
             this.comboBoxLeagues.Name = "comboBoxLeagues";
@@ -42,21 +45,27 @@
             // 
             // buttonGo
             // 
+            this.buttonGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonGo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGo.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonGo.Location = new System.Drawing.Point(143, 12);
             this.buttonGo.Name = "buttonGo";
             this.buttonGo.Size = new System.Drawing.Size(38, 23);
             this.buttonGo.TabIndex = 1;
             this.buttonGo.Text = "Go";
-            this.buttonGo.UseVisualStyleBackColor = true;
+            this.buttonGo.UseVisualStyleBackColor = false;
             this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
             // DraftDayLeagueSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(190, 45);
             this.Controls.Add(this.buttonGo);
             this.Controls.Add(this.comboBoxLeagues);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DraftDayLeagueSelect";
             this.Text = "DraftDayLeagueSelect";
             this.ResumeLayout(false);

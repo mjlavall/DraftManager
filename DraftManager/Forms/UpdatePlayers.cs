@@ -58,6 +58,7 @@ namespace DraftManager.Forms
             comboBoxPosition.SelectedItem = player?.Position;
             comboBoxTeam.SelectedItem = player?.Team;
             checkBoxInjured.Checked = player?.Injured ?? false;
+            checkBoxOut.Checked = player?.Out ?? false;
 
             groupBoxDetails.Visible = true;
             Loaded = player != null;
@@ -85,6 +86,7 @@ namespace DraftManager.Forms
             player.Rank = (int)numericUpDownRank.Value;
             player.TeamId = ((Team)comboBoxTeam.SelectedItem).Id;
             player.Injured = checkBoxInjured.Checked;
+            player.Out = checkBoxOut.Checked;
 
             context.SaveChanges();
             UpdateListBox();

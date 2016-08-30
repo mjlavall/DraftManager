@@ -39,12 +39,16 @@
             // 
             // buttonLoadPlayers
             // 
+            this.buttonLoadPlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonLoadPlayers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonLoadPlayers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoadPlayers.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonLoadPlayers.Location = new System.Drawing.Point(13, 13);
             this.buttonLoadPlayers.Name = "buttonLoadPlayers";
             this.buttonLoadPlayers.Size = new System.Drawing.Size(100, 23);
             this.buttonLoadPlayers.TabIndex = 0;
             this.buttonLoadPlayers.Text = "Load Players";
-            this.buttonLoadPlayers.UseVisualStyleBackColor = true;
+            this.buttonLoadPlayers.UseVisualStyleBackColor = false;
             this.buttonLoadPlayers.Click += new System.EventHandler(this.buttonLoadPlayers_Click);
             // 
             // labelLoaded
@@ -58,58 +62,79 @@
             // 
             // buttonUpdatePlayers
             // 
+            this.buttonUpdatePlayers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonUpdatePlayers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonUpdatePlayers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdatePlayers.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonUpdatePlayers.Location = new System.Drawing.Point(13, 42);
             this.buttonUpdatePlayers.Name = "buttonUpdatePlayers";
             this.buttonUpdatePlayers.Size = new System.Drawing.Size(100, 23);
             this.buttonUpdatePlayers.TabIndex = 2;
             this.buttonUpdatePlayers.Text = "Update Players";
-            this.buttonUpdatePlayers.UseVisualStyleBackColor = true;
+            this.buttonUpdatePlayers.UseVisualStyleBackColor = false;
             this.buttonUpdatePlayers.Click += new System.EventHandler(this.buttonUpdatePlayers_Click);
             // 
             // buttonInjuries
             // 
+            this.buttonInjuries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonInjuries.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonInjuries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInjuries.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonInjuries.Location = new System.Drawing.Point(119, 42);
             this.buttonInjuries.Name = "buttonInjuries";
             this.buttonInjuries.Size = new System.Drawing.Size(100, 23);
             this.buttonInjuries.TabIndex = 3;
             this.buttonInjuries.Text = "Mark Injuries";
-            this.buttonInjuries.UseVisualStyleBackColor = true;
+            this.buttonInjuries.UseVisualStyleBackColor = false;
             this.buttonInjuries.Click += new System.EventHandler(this.buttonInjuries_Click);
             // 
             // buttonNewLeague
             // 
+            this.buttonNewLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonNewLeague.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonNewLeague.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonNewLeague.Location = new System.Drawing.Point(13, 71);
             this.buttonNewLeague.Name = "buttonNewLeague";
             this.buttonNewLeague.Size = new System.Drawing.Size(100, 23);
             this.buttonNewLeague.TabIndex = 4;
             this.buttonNewLeague.Text = "New League";
-            this.buttonNewLeague.UseVisualStyleBackColor = true;
+            this.buttonNewLeague.UseVisualStyleBackColor = false;
             this.buttonNewLeague.Click += new System.EventHandler(this.buttonNewLeague_Click);
             // 
             // buttonEditLeague
             // 
+            this.buttonEditLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonEditLeague.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonEditLeague.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonEditLeague.Location = new System.Drawing.Point(119, 71);
             this.buttonEditLeague.Name = "buttonEditLeague";
             this.buttonEditLeague.Size = new System.Drawing.Size(100, 23);
             this.buttonEditLeague.TabIndex = 4;
             this.buttonEditLeague.Text = "Edit League";
-            this.buttonEditLeague.UseVisualStyleBackColor = true;
+            this.buttonEditLeague.UseVisualStyleBackColor = false;
             this.buttonEditLeague.Click += new System.EventHandler(this.buttonEditLeague_Click);
             // 
             // buttonDraftDay
             // 
+            this.buttonDraftDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonDraftDay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonDraftDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDraftDay.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonDraftDay.Location = new System.Drawing.Point(65, 100);
             this.buttonDraftDay.Name = "buttonDraftDay";
             this.buttonDraftDay.Size = new System.Drawing.Size(100, 23);
             this.buttonDraftDay.TabIndex = 5;
             this.buttonDraftDay.Text = "Draft Day";
-            this.buttonDraftDay.UseVisualStyleBackColor = true;
+            this.buttonDraftDay.UseVisualStyleBackColor = false;
             this.buttonDraftDay.Click += new System.EventHandler(this.buttonDraftDay_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(233, 130);
             this.Controls.Add(this.buttonDraftDay);
             this.Controls.Add(this.buttonEditLeague);
@@ -118,6 +143,8 @@
             this.Controls.Add(this.buttonUpdatePlayers);
             this.Controls.Add(this.labelLoaded);
             this.Controls.Add(this.buttonLoadPlayers);
+            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Menu";
             this.Text = "Draft Manager";
             this.ResumeLayout(false);

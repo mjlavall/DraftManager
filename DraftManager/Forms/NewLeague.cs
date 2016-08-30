@@ -23,10 +23,10 @@ namespace DraftManager.Forms
 
         private void buttonAddLeague_Click(object sender, EventArgs e)
         {
-            string leagueName = textBoxLeague.Text;
+            var leagueName = textBoxLeague.Text;
             textBoxLeague.Text = "";
             if (string.IsNullOrEmpty(leagueName)) return;
-            if (context.Leagues.Any(l => l.Name.ToUpper() == leagueName.ToUpper())) return;
+            if (context.Leagues.Any(l => l.Name.Equals(leagueName, StringComparison.CurrentCultureIgnoreCase))) return;
             context.Leagues.Add(new League {Name = leagueName});
             context.SaveChanges();
             UpdateListBox();
