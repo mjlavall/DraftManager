@@ -158,7 +158,7 @@
             this.Controls.Add(this.comboBoxLeague);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditLeague";
-            this.Text = "DraftSetup";
+            this.Text = "Edit League";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -36,6 +36,7 @@
             this.listBoxMyTeam = new System.Windows.Forms.ListBox();
             this.labelCurrentTeam = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonRevert = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxAvailablePlayers
@@ -128,12 +129,26 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "My Team";
             // 
+            // buttonRevert
+            // 
+            this.buttonRevert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonRevert.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonRevert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRevert.Location = new System.Drawing.Point(1005, 12);
+            this.buttonRevert.Name = "buttonRevert";
+            this.buttonRevert.Size = new System.Drawing.Size(55, 50);
+            this.buttonRevert.TabIndex = 10;
+            this.buttonRevert.Text = "Revert";
+            this.buttonRevert.UseVisualStyleBackColor = false;
+            this.buttonRevert.Click += new System.EventHandler(this.buttonRevert_Click);
+            // 
             // DraftDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1072, 534);
+            this.Controls.Add(this.buttonRevert);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelCurrentTeam);
             this.Controls.Add(this.listBoxMyTeam);
@@ -161,5 +176,6 @@
         private System.Windows.Forms.ListBox listBoxMyTeam;
         private System.Windows.Forms.Label labelCurrentTeam;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonRevert;
     }
 }
