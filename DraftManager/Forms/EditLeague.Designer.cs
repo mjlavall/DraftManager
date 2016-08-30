@@ -93,7 +93,7 @@
             this.buttonUp.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonUp.Location = new System.Drawing.Point(210, 144);
             this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(50, 23);
+            this.buttonUp.Size = new System.Drawing.Size(53, 23);
             this.buttonUp.TabIndex = 4;
             this.buttonUp.Text = "UP";
             this.buttonUp.UseVisualStyleBackColor = false;
@@ -107,7 +107,7 @@
             this.buttonDelete.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonDelete.Location = new System.Drawing.Point(210, 231);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(50, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(53, 23);
             this.buttonDelete.TabIndex = 5;
             this.buttonDelete.Text = "DEL";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -121,7 +121,7 @@
             this.buttonDown.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonDown.Location = new System.Drawing.Point(210, 173);
             this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(50, 23);
+            this.buttonDown.Size = new System.Drawing.Size(53, 23);
             this.buttonDown.TabIndex = 6;
             this.buttonDown.Text = "DOWN";
             this.buttonDown.UseVisualStyleBackColor = false;
