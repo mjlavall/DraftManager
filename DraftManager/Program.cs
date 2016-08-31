@@ -16,7 +16,7 @@ namespace DraftManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Menu());
+            Application.Run(new Forms.DraftDay());
         }
     }
 }

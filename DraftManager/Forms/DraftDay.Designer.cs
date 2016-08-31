@@ -37,6 +37,8 @@
             this.labelCurrentTeam = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonRevert = new System.Windows.Forms.Button();
+            this.comboBoxLeague = new System.Windows.Forms.ComboBox();
+            this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxAvailablePlayers
@@ -142,12 +144,39 @@
             this.buttonRevert.UseVisualStyleBackColor = false;
             this.buttonRevert.Click += new System.EventHandler(this.buttonRevert_Click);
             // 
+            // comboBoxLeague
+            // 
+            this.comboBoxLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.comboBoxLeague.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.comboBoxLeague.FormattingEnabled = true;
+            this.comboBoxLeague.Location = new System.Drawing.Point(821, 12);
+            this.comboBoxLeague.Name = "comboBoxLeague";
+            this.comboBoxLeague.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxLeague.TabIndex = 11;
+            this.comboBoxLeague.SelectedIndexChanged += new System.EventHandler(this.comboBoxLeague_SelectedIndexChanged);
+            // 
+            // buttonMenu
+            // 
+            this.buttonMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMenu.Location = new System.Drawing.Point(728, 10);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(87, 23);
+            this.buttonMenu.TabIndex = 12;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
             // DraftDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1072, 534);
+            this.Controls.Add(this.buttonMenu);
+            this.Controls.Add(this.comboBoxLeague);
             this.Controls.Add(this.buttonRevert);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelCurrentTeam);
@@ -177,5 +206,7 @@
         private System.Windows.Forms.Label labelCurrentTeam;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonRevert;
+        private System.Windows.Forms.ComboBox comboBoxLeague;
+        private System.Windows.Forms.Button buttonMenu;
     }
 }

@@ -1,42 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DraftManager.Models;
+using DraftManager.Properties;
 
 namespace DraftManager.Forms
 {
     public partial class DraftDay : Form
     {
-        private DraftContext context = new DraftContext();
-        private League _league;
-        private int _picks => _selected?.Count ?? 0;
-        private int _teams => _league?.Rosters?.Count ?? 0;
-        private int _direction => (_picks / _teams) % 2 == 0 ? 1 : -1;
-        private List<Player> _selected
+        public readonly DraftContext Context = new DraftContext();
+        private League League => comboBoxLeague.SelectedItem as League;
+        private int Picks => Selected?.Count ?? 0;
+        private int Teams => League?.Rosters?.Count ?? 0;
+        private int Direction => (Picks / Teams) % 2 == 0 ? 1 : -1;
+        private int Index => Direction > 0 ? Picks % Teams : Teams - Picks % Teams - 1;
+        private Roster Roster => League.Rosters?.OrderBy(r => r.DraftOrder).ToList()[Index];
+        private List<Player> Selected
         {
             get
             {
                 var selected = new List<Player>();
-                foreach (var roster in _league.Rosters)
+                if(League.Rosters == null) return selected;
+                foreach (var roster in League.Rosters)
                 {
                     selected.AddRange(roster.Players);
                 }
                 return selected;
             }
         }
-        private int index => _direction > 0 ? _picks % _league.Rosters.Count : _teams - _picks % _league.Rosters.Count - 1;
-        private Roster _roster => _league.Rosters.ToList()[index];
 
-        public DraftDay(League league)
+        public DraftDay()
         {
             InitializeComponent();
-            _league = context.Leagues.Single(l => l.Id == league.Id);
+            InitializeDraft();
+        }
+
+        public void InitializeDraft(bool updateLeagues = true)
+        {
+            if (!Context.Leagues.Any()) return;
+            if (updateLeagues)
+            {
+                var selectedLeague = comboBoxLeague.SelectedItem as League;
+                comboBoxLeague.DataSource = Context.Leagues.ToList();
+                if(selectedLeague != null) comboBoxLeague.SelectedItem = selectedLeague;
+            }
+            if (Teams == 0)
+            {
+                listBoxRoster.DataSource = new List<Player>();
+                listBoxMyTeam.DataSource = new List<Player>();
+                labelCurrentTeam.Text = "";
+                labelRoundInfo.Text = Resources.DraftDay_InitializeDraft_No_Teams_Configured;
+                return;
+            }
             BindAvailablePlayers();
             comboBoxFilter.DataSource = new List<string> { "ALL", "RB", "WR", "TE", "QB", "K", "D/ST" };
             SetRoundInfo();
@@ -45,31 +61,32 @@ namespace DraftManager.Forms
 
         private void SetRoundInfo()
         {
-            labelRoundInfo.Text = $"Round {(_picks / _teams) + 1} - {_roster.Name}";
-            labelCurrentTeam.Text = _roster.Name;
+            labelRoundInfo.Text = $"Round {(Picks / Teams) + 1} - {Roster?.Name}";
+            labelCurrentTeam.Text = Roster?.Name;
         }
     
         private void BindAvailablePlayers()
         {
-            var available = context.Players.ToList().Where(p => _selected.All(s => s.Id != p.Id)).ToList();
+            var available = Context.Players.ToList().Where(p => Selected.All(s => s.Id != p.Id)).ToList();
             var filterName = textBoxFilter.Text.ToUpper();
             var posFilter = (string) comboBoxFilter.SelectedItem;
-            listBoxAvailablePlayers.DataSource = available.Where(p => p.Name.ToUpper().Contains(filterName) && (posFilter == "ALL" || posFilter == p.Position)).ToList();
+            listBoxAvailablePlayers.DataSource = available.Where(p => p.Name.ToUpper().Contains(filterName) && (posFilter == "ALL" || posFilter == p.Position))
+                .OrderBy(p => p.Rank).ToList();
         }
 
         private void BindRoster()
         {
-            listBoxRoster.DataSource = _roster.Players.ToList();
-            listBoxMyTeam.DataSource = _league.Rosters.Single(r => r.IsMe).Players.OrderBy(p => p.Position).ToList();
+            listBoxRoster.DataSource = Roster.Players.ToList();
+            listBoxMyTeam.DataSource = League.Rosters.SingleOrDefault(r => r.IsMe)?.Players.OrderBy(p => p.Position).ToList();
         }
 
         private void listBoxAvailablePlayers_DoubleClick(object sender, EventArgs e)
         {
-            var player = context.Players.Single(p => p.Id == ((Player)listBoxAvailablePlayers.SelectedItem).Id);
-            var roster = context.Rosters.Single(r => r.Id == _roster.Id);
+            var player = Context.Players.Single(p => p.Id == ((Player)listBoxAvailablePlayers.SelectedItem).Id);
+            var roster = Context.Rosters.Single(r => r.Id == Roster.Id);
             roster.Players.Add(player);
             player.Rosters.Add(roster);
-            context.SaveChanges();
+            Context.SaveChanges();
 
             BindAvailablePlayers();
             BindRoster();
@@ -88,15 +105,25 @@ namespace DraftManager.Forms
 
         private async void buttonRevert_Click(object sender, EventArgs e)
         {
-            if (_picks <= 0) return;
-            var lastIndex = (index - 1)%_teams;
-            var lastRoster = _league.Rosters.ToList()[lastIndex];
+            if (Picks <= 0) return;
+            var lastIndex = (Index - 1)%Teams;
+            var lastRoster = League.Rosters.ToList()[lastIndex];
             var lastPlayer = lastRoster.Players.Last();
             lastRoster.Players.Remove(lastPlayer);
-            await context.SaveChangesAsync();
+            await Context.SaveChangesAsync();
             BindAvailablePlayers();
             BindRoster();
             SetRoundInfo();
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            new Menu(this).Show();
+        }
+
+        private void comboBoxLeague_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InitializeDraft(false);
         }
     }
 }

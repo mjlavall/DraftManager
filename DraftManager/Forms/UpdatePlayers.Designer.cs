@@ -100,6 +100,7 @@
             // comboBoxTeam
             // 
             this.comboBoxTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
+            this.comboBoxTeam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTeam.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBoxTeam.FormattingEnabled = true;
             this.comboBoxTeam.Location = new System.Drawing.Point(78, 130);
@@ -174,6 +175,7 @@
             // comboBoxPosition
             // 
             this.comboBoxPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
+            this.comboBoxPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxPosition.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBoxPosition.FormattingEnabled = true;
             this.comboBoxPosition.Location = new System.Drawing.Point(78, 103);
@@ -226,6 +228,7 @@
             this.Controls.Add(this.groupBoxDetails);
             this.Controls.Add(this.listBoxPlayers);
             this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "UpdatePlayers";
             this.Text = "Update Players";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRank)).EndInit();

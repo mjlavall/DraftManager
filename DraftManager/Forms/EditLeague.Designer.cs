@@ -1,4 +1,6 @@
-﻿namespace DraftManager.Forms
+﻿using System.Windows.Forms;
+
+namespace DraftManager.Forms
 {
     partial class EditLeague
     {
@@ -36,11 +38,13 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonClearRosters = new System.Windows.Forms.Button();
+            this.buttonDeleteLeague = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxLeague
             // 
             this.comboBoxLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.comboBoxLeague.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.comboBoxLeague.Location = new System.Drawing.Point(12, 12);
             this.comboBoxLeague.Name = "comboBoxLeague";
@@ -57,7 +61,6 @@
             this.textBoxTeam.Name = "textBoxTeam";
             this.textBoxTeam.Size = new System.Drawing.Size(192, 20);
             this.textBoxTeam.TabIndex = 1;
-            this.textBoxTeam.TextChanged += new System.EventHandler(this.textBoxTeam_TextChanged);
             // 
             // listBoxTeams
             // 
@@ -141,6 +144,20 @@
             this.buttonClearRosters.UseVisualStyleBackColor = false;
             this.buttonClearRosters.Click += new System.EventHandler(this.buttonClearRosters_Click);
             // 
+            // buttonDeleteLeague
+            // 
+            this.buttonDeleteLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonDeleteLeague.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonDeleteLeague.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.buttonDeleteLeague.Location = new System.Drawing.Point(112, 312);
+            this.buttonDeleteLeague.Name = "buttonDeleteLeague";
+            this.buttonDeleteLeague.Size = new System.Drawing.Size(92, 23);
+            this.buttonDeleteLeague.TabIndex = 8;
+            this.buttonDeleteLeague.Text = "Delete League";
+            this.buttonDeleteLeague.UseVisualStyleBackColor = false;
+            this.buttonDeleteLeague.Click += new System.EventHandler(this.buttonDeleteLeague_Click);
+            // 
             // EditLeague
             // 
             this.AcceptButton = this.buttonAddTeam;
@@ -148,6 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(275, 342);
+            this.Controls.Add(this.buttonDeleteLeague);
             this.Controls.Add(this.buttonClearRosters);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonDelete);
@@ -175,5 +193,6 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonClearRosters;
+        private Button buttonDeleteLeague;
     }
 }

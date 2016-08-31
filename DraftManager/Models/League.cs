@@ -11,5 +11,7 @@ namespace DraftManager.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Roster> Rosters { get; set; }
+
+        public override string ToString() => Name;
     }
 }

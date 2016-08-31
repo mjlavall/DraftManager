@@ -35,6 +35,9 @@
             // 
             // textBoxLeague
             // 
+            this.textBoxLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.textBoxLeague.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.textBoxLeague.Location = new System.Drawing.Point(12, 12);
             this.textBoxLeague.Name = "textBoxLeague";
             this.textBoxLeague.Size = new System.Drawing.Size(192, 20);
@@ -42,32 +45,42 @@
             // 
             // buttonAddLeague
             // 
+            this.buttonAddLeague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonAddLeague.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.buttonAddLeague.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddLeague.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonAddLeague.Location = new System.Drawing.Point(12, 38);
             this.buttonAddLeague.Name = "buttonAddLeague";
             this.buttonAddLeague.Size = new System.Drawing.Size(75, 23);
             this.buttonAddLeague.TabIndex = 2;
             this.buttonAddLeague.Text = "Add League";
-            this.buttonAddLeague.UseVisualStyleBackColor = true;
+            this.buttonAddLeague.UseVisualStyleBackColor = false;
             this.buttonAddLeague.Click += new System.EventHandler(this.buttonAddLeague_Click);
             // 
             // listBoxLeagues
             // 
+            this.listBoxLeagues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(66)))));
+            this.listBoxLeagues.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxLeagues.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.listBoxLeagues.FormattingEnabled = true;
             this.listBoxLeagues.Location = new System.Drawing.Point(12, 67);
             this.listBoxLeagues.Name = "listBoxLeagues";
-            this.listBoxLeagues.Size = new System.Drawing.Size(192, 251);
+            this.listBoxLeagues.Size = new System.Drawing.Size(192, 247);
             this.listBoxLeagues.TabIndex = 1;
             // 
             // NewLeague
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(219, 331);
             this.Controls.Add(this.buttonAddLeague);
             this.Controls.Add(this.listBoxLeagues);
             this.Controls.Add(this.textBoxLeague);
+            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NewLeague";
-            this.Text = "DraftSetup";
+            this.Text = "New League";
             this.ResumeLayout(false);
             this.PerformLayout();
 

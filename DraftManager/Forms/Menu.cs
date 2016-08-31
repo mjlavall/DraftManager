@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity.Migrations;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DraftManager.Models;
+using DraftManager.Properties;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DraftManager.Forms
 {
     public partial class Menu : Form
     {
-        private DraftContext context = new DraftContext();
-        public Menu()
+        private readonly DraftDay _draft;
+
+        public Menu(DraftDay draft)
         {
             InitializeComponent();
             labelLoaded.Text = "";
+            _draft = draft;
         }
 
         private void buttonLoadPlayers_Click(object sender, EventArgs e)
@@ -52,8 +49,8 @@ namespace DraftManager.Forms
                     var last = name.Length > 1 ? name[1] : "";
                     var pos = worksheet.Cells[row, 3].Value.ToString();
                     string team = worksheet.Cells[row, 4].Value.ToString();
-                    var teamId = context.Teams.Single(t => t.Abbreviation == team).Id;
-                    context.Players.AddOrUpdate(p => p.Rank, new Player
+                    var teamId = _draft?.Context.Teams.Single(t => t.Abbreviation == team).Id ?? 0;
+                    _draft?.Context.Players.AddOrUpdate(p => p.Rank, new Player
                     {
                         FirstName = first,
                         LastName = last,
@@ -64,51 +61,46 @@ namespace DraftManager.Forms
                     row++;
                     labelLoaded.Text = $"Loaded: {row - 1}";
 
-                    context.SaveChanges();
+                    _draft?.Context.SaveChanges();
                 }
             }
             catch (Exception e)
             {
-                
+                MessageBox.Show(e.Message);
             }
             finally
             {
                 buttonLoadPlayers.Enabled = true;
-                labelLoaded.Text = "Done";
+                labelLoaded.Text = Resources.Menu_LoadPlayers_Done;
                 workbook.Close(false, Type.Missing, Type.Missing);
             }
         }
 
         private void buttonUpdatePlayers_Click(object sender, EventArgs e)
         {
-            new UpdatePlayers().Show();
+            new UpdatePlayers(_draft).Show();
         }
 
         private void buttonInjuries_Click(object sender, EventArgs e)
         {
-            new MarkInjuries().Show();
+            new MarkInjuries(_draft).Show();
         }
 
         private void buttonNewLeague_Click(object sender, EventArgs e)
         {
-            new NewLeague().Show();
+            new NewLeague(_draft).Show();
         }
 
         private void buttonEditLeague_Click(object sender, EventArgs e)
         {
-            if(context.Leagues.Count() > 0)
+            if(_draft != null && _draft.Context.Leagues.Any())
             {
-                new EditLeague().Show();
+                new EditLeague(_draft).Show();
             }
             else
             {
-                MessageBox.Show("No leagues are configured.");
+                MessageBox.Show(Resources.Menu_buttonEditLeague_Click_No_leagues_are_configured_);
             }
-        }
-
-        private void buttonDraftDay_Click(object sender, EventArgs e)
-        {
-            new DraftDayLeagueSelect().Show();
         }
     }
 }
